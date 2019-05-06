@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const constraints = requiere('cons')
+const constraints = requiere('cors')
 
 router.all('*', constraints())
 
