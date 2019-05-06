@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const cors = require('cors')
 
-router.all('*', cors)
+router.all('*', cors())
+
 
 const users = require('./controllers/users.js')
 const todos = require('./controllers/todos.js')
