@@ -12,13 +12,17 @@ const auth = function( req, res, next ) {
       if(!user) {
         throw new Error()
       }
+      console.log(req)
       req.token = token
       req.user = user
       next()
     }).catch(function(error) {
+      
       res.status(401).send({ error: 'Authenticate plz'})
     })
   } catch(e) {
+    console.log(req)
+
     res.status(401).send({ error: 'Authenticate plz'})
   }
 }
