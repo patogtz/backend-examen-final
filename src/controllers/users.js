@@ -42,13 +42,18 @@ const createUser = function(req, res){
 }
 
 const login = function(req, res) {
+  console.log("dasdasds")
   User.findByCredentials(req.body.email, req.body.password).then(function(user){
     user.generateToken().then(function(token){
+      console.log("2")
       return res.send({user, token})
     }).catch(function(error){
+      console.log("1")
       return res.status(401).send({ error: error })
     })
   }).catch(function(error) {
+    
+
     return res.status(401).send({ error: error })
   })
 }

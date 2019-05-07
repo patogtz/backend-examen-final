@@ -4,6 +4,7 @@ const cors = require('cors')
 
 router.all('*', cors())
 
+console.log('rutas')
 
 const users = require('./controllers/users.js')
 const todos = require('./controllers/todos.js')
